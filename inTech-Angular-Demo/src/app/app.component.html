@@ -5,9 +5,18 @@
   </h1>
 </div>
 
-
 <input [(ngModel)]="username">
 <button (click)="onClick()">Click Me</button>
+<button (click)="loadUsers()">Load Users</button>
 
 <p>{{username}}</p>
+
+<div class="container">
+  <div class="row">
+    <div class ="col-2" *ngFor="let user of UserList">
+      <p>{{user.login}}</p>
+      <img [src]="user.avatar_url" height="42" width="42"/>
+    </div>
+  </div>
+</div>
 
